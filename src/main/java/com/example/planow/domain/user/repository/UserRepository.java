@@ -1,5 +1,6 @@
 package com.example.planow.domain.user;
 
+import com.example.planow.domain.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
