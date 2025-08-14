@@ -1,5 +1,6 @@
-package com.example.planow.domain.user;
+package com.example.planow.domain.user.entity;
 
+import com.example.planow.domain.user.userrole.UserRole;
 import com.example.planow.global.entity.Timestamped;
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,6 +10,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
+@Table(name = "users")
 public class User extends Timestamped {
 
     @Id
@@ -22,4 +24,13 @@ public class User extends Timestamped {
     private String password;
 
     private String nickname;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    @Builder.Default
+    private UserRole userRole = UserRole.ROLE_USER;
+
+    public void update(String nickname){
+        this.nickname = nickname;
+    }
 }

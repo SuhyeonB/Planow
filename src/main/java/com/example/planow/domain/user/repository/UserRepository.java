@@ -1,4 +1,4 @@
-package com.example.planow.domain.user;
+package com.example.planow.domain.user.repository;
 
 import com.example.planow.domain.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
